@@ -248,7 +248,8 @@ ul {
   background:var(--card);
   text-align:center;
   padding:68px 36px 30px;
-  border-radius:2px;
+  border-radius:4px;
+  transition:opacity .9s ease,transform .4s ease,background-color .4s ease,box-shadow .4s ease;
 }
 .feature-card .icon {
   position:absolute;
@@ -270,12 +271,14 @@ ul {
   font-size:16.5px;
   font-weight:400;
   margin-bottom:13px;
+  transition:color .4s ease;
 }
 .feature-card p {
   font-size:14.5px;
   line-height:1.7;
   margin:0 auto 14px;
   color:#6c6c6c;
+  transition:color .4s ease;
 }
 .link {
   font-size:14.5px;
@@ -284,6 +287,32 @@ ul {
 }
 .link:hover {
   text-decoration:underline;
+}
+
+/* ===== Feature card hover (matches original) ===== */
+.feature-card .link {
+  transition:color .4s ease;
+}
+.feature-card:hover {
+  background-color:#5a7ed4;
+  transform:translateY(-7px);
+  box-shadow:0 14px 34px rgba(71,131,236,.28);
+}
+.feature-card:hover h3,
+.feature-card:hover p {
+  color:#e8ebf9;
+}
+.feature-card:hover .link {
+  color:#fff;
+}
+.feature-card:hover .icon {
+  animation:iconFlash .5s ease;
+}
+@keyframes iconFlash {
+  0%   { background:var(--blue); color:#fff; }
+  35%  { background:#fff; color:var(--blue); }
+  65%  { background:#fff; color:var(--blue); }
+  100% { background:var(--blue); color:#fff; }
 }
 
 /* ===== Split rows ===== */
